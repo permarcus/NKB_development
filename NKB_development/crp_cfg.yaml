@@ -1,0 +1,8 @@
+# (Sample) Config file to use to specify local settings.
+# 1. Copy this file and edit each elemnt to correspond to your local computer settings.
+# 2. Save the file to crp_cfg.yaml in your local repository (same position as this file)
+# 3. Add crp_cfg.yaml in your .gitignore file, do not commit it!
+
+dropbox_path: "/Users/per.marcus/Dropbox (Tölve)/Teammapp som tillhör CRP"
+package_path: "/Users/per.marcus/Documents/Tolve/crp_generic"
+customer_path: "/Users/per.marcus/Documents/Tolve/crp_customers"
