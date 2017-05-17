@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# (Sample) Config file to use to specify local settings.\n# 1. Copy this file and edit each elemnt to correspond to your local computer settings.\n# 2. Save the file to crp_cfg.yaml in your local repository (same position as this file)\n# 3. Add crp_cfg.yaml in your .gitignore file, do not commit it!\n\ndropbox_path: \"/Users/per.marcus/Dropbox (Tölve)/Teammapp som tillhör CRP\"\npackage_path: \"/Users/per.marcus/Documents/Tolve/crp_generic\"\ncustomer_path: \"/Users/per.marcus/Documents/Tolve/crp_customers\"\n",
+    "created" : 1495019738098.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1344488152",
+    "id" : "4A7E2B46",
+    "lastKnownWriteTime" : 1494945345,
+    "last_content_update" : 1494945345,
+    "path" : "~/Documents/Tolve/NKB_development/crp_cfg.yaml",
+    "project_path" : "crp_cfg.yaml",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}

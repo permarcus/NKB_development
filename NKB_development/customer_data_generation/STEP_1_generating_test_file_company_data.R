@@ -9,7 +9,7 @@ cfg <- crp::read_crp_config()
 # Loading path
 NKB_SE_path <- file.path(cfg$dropbox_path, "/NKB/Production_data/NKB_SE.Rdata")
 # Saving path
-NKB_customer_test_path <- file.path(cfg$dropbox_path, "NKB/Production_test/NKB_customer_test.Rproj")
+NKB_customer_test_path <- file.path(cfg$dropbox_path, "NKB/Production_test/NKB_customer_test.Rdata")
 
 #
 # Loading NKB_SE

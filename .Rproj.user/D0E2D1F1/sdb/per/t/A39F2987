@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#\n# Sammanställaning av data\n\ncfg <- crp::read_crp_config()\n\nNKB_customer_test_path <- file.path(cfg$dropbox_path, \n                                    \"NKB/Production_test/NKB_customer_test.Rproj\")\nTolve_interaction_path <- file.path(cfg$dropbox_path, \n                                    \"/NKB/Production_test/NKB_interaction_test/Interaction_test_data.Rdata\")\n\nload(NKB_customer_test_path)\nload(Tolve_interaction_path)\n\n\n\n",
+    "created" : 1495019460749.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4151452471",
+    "id" : "A39F2987",
+    "lastKnownWriteTime" : 1494945345,
+    "last_content_update" : 1494945345,
+    "path" : "~/Documents/Tolve/NKB_development/NKB_development/customer_data_generation/Load_finished_test_data.R",
+    "project_path" : "NKB_development/customer_data_generation/Load_finished_test_data.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
