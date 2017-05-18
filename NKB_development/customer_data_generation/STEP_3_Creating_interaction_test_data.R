@@ -1,7 +1,7 @@
 #
 # Creating test interaction data
 # 
-
+library(lubridate)
 # Setting parameters
 cfg <- crp::read_crp_config()
 
@@ -70,18 +70,18 @@ Universal_interaction$product_id <- 1
 
 #
 # Add customer name ( to be exdluded for product, but in use for practical reasons)
-Brave_interaction$company_name <- "Brave"
-Frida_interaction$company_name <- "Frida"
-Jessica_interaction$company_name <- "Jessica"
-Kajsa_interaction$company_name <- "Kajsa"
-Luffsen_interaction$company_name <- "Luffsen"
-Multi_interaction$company_name <- "Multi"
-Nettan_interaction$company_name <- "Nettan"
-Pernilla_interaction$company_name <- "Pernilla" 
-Poe_interaction$company_name <- "Poe"
-Pongo_interaction$company_name <- "Pongo" 
-Stephani_interaction$company_name <- "Stephani"  
-Universal_interaction$company_name <- "Universal" 
+#Brave_interaction$company_name <- "Brave"
+#Frida_interaction$company_name <- "Frida"
+#Jessica_interaction$company_name <- "Jessica"
+#Kajsa_interaction$company_name <- "Kajsa"
+#Luffsen_interaction$company_name <- "Luffsen"
+#Multi_interaction$company_name <- "Multi"
+#Nettan_interaction$company_name <- "Nettan"
+#Pernilla_interaction$company_name <- "Pernilla" 
+#Poe_interaction$company_name <- "Poe"
+#Pongo_interaction$company_name <- "Pongo" 
+#Stephani_interaction$company_name <- "Stephani"  
+#Universal_interaction$company_name <- "Universal" 
 
 #
 # Changing type of to Date
@@ -128,6 +128,25 @@ Tolve_interaction <- dplyr::bind_rows(Brave_interaction,
                                       Stephani_interaction,
                                       Universal_interaction)
 
+#
+# Sorting to fulfill assertion
+Tolve_interaction <- Tolve_interaction[, c(1,4,5,3,2,6)]
+
+#
+# Setting class for assertion
+  Tolve_interaction$company_id <- as.character(Tolve_interaction$company_id)  
+  Tolve_interaction$buyer_id <- as.integer(Tolve_interaction$buyer_id)
+  Tolve_interaction$product_id <- as.integer(Tolve_interaction$product_id) 
+  Tolve_interaction$sale_process_stage <- as.character(Tolve_interaction$sale_process_stage) 
+  Tolve_interaction$date_from <- lubridate::as_date(Tolve_interaction$date_from)
+  Tolve_interaction$date_to <- lubridate::as_date(Tolve_interaction$date_to) 
+
+Tolve_interaction <- dplyr::as_data_frame(Tolve_interaction)  
+  
+#
+# Adjusting to interaction data
+Tolve_interaction <- TolveProspectingBot::interaction_data(Tolve_interaction)
+  
 #
 # Saving Rdata file
 save(Tolve_interaction, file = Interaction_test_path, compression_level = 9)

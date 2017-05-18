@@ -31,8 +31,24 @@ NKB_customer_test$STMT_TO_DT <- as.Date(NKB_customer_test$STMT_TO_DT)
 
 #
 # Setting company_from and company_to
-NKB_customer_test$COMPANY_TO <- NKB_customer_test$STMT_TO_DT + months(1) - days(1)
-NKB_customer_test$COMPANY_FROM <- NKB_customer_test$STMT_TO_DT - months(NKB_customer_test$NBR_MO) + months(1)
+NKB_customer_test$company_to <- NKB_customer_test$STMT_TO_DT + months(1) - days(1)
+NKB_customer_test$company_from <- NKB_customer_test$STMT_TO_DT - months(NKB_customer_test$NBR_MO) + months(1)
+
+#
+# Asserition for prospecting bot
+#Setting correct namespecification
+colnames(NKB_customer_test)[1] <- "company_id"
+
+#
+# Setting correct type och variable
+#
+# Setting class for assertion
+NKB_customer_test$company_id <- as.character(NKB_customer_test$company_id)  
+NKB_customer_test$company_from <- lubridate::as_date(NKB_customer_test$company_from)
+NKB_customer_test$company_to <- lubridate::as_date(NKB_customer_test$company_to) 
+
+NKB_customer_test <- TolveProspectingBot::company_data(NKB_customer_test)
+
 
 #
 # Save customer data test file
