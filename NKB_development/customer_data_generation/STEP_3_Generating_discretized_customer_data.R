@@ -33,6 +33,8 @@ NKB_SE_disc_test$NET_SALES <- NKB_cut_number(NKB_customer_test$NET_SALES, number
 NKB_SE_disc_test$NBR_EMP <- NKB_cut(NKB_customer_test$NBR_EMP, cut_vector = c(0,3,8,15,50,200,Inf))
 
 
+NKB_SE_disc_test <- TolveProspectingBot::company_data(NKB_SE_disc_test)
+
 #
 # Setting git hash
 attr(NKB_SE_disc_test, "git_hash") <- TolveNkb:::get_git_sha1()
