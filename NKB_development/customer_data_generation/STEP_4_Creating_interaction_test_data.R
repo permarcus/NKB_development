@@ -114,6 +114,22 @@ Stephani_interaction$date_to <- Stephani_interaction$date_from + days(1)
 Universal_interaction$date_to <- Universal_interaction$date_from + days(1)
 
 #
+# Clearing out duplicates
+Brave_interaction <- Brave_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Frida_interaction <- Frida_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Jessica_interaction <- Jessica_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Kajsa_interaction <- Kajsa_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Luffsen_interaction <- Luffsen_interaction %>%  group_by(company_id) %>%   arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Multi_interaction <- Multi_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Nettan_interaction <- Nettan_interaction %>%  group_by(company_id) %>% arrange(company_id) %>%  filter(duplicated(company_id) == FALSE)
+Pernilla_interaction <- Pernilla_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Poe_interaction <- Poe_interaction %>%  group_by(company_id) %>%  arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Pongo_interaction <- Pongo_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Stephani_interaction <- Stephani_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+Universal_interaction <- Universal_interaction %>%  group_by(company_id) %>% arrange(company_id) %>% filter(duplicated(company_id) == FALSE)
+
+
+#
 # Combinig data to one dataframe
 Tolve_interaction <- dplyr::bind_rows(Brave_interaction,
                                       Frida_interaction,
