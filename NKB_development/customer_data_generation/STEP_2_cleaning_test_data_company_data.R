@@ -49,6 +49,9 @@ NKB_customer_test$company_to <- lubridate::as_date(NKB_customer_test$company_to)
 
 NKB_customer_test <- TolveProspectingBot::company_data(NKB_customer_test)
 
+#
+# Removing unwanted coulumns
+NKB_customer_test <- NKB_customer_test[, c(1,7,6,3,5)]
 
 #
 # Save customer data test file
